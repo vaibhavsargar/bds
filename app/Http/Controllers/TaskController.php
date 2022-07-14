@@ -36,7 +36,9 @@ class TaskController extends Controller
     }
     public function task3()
     {
-        $response = Http::get(env('API_URL'));
+        $api_url = "https://jsonplaceholder.typicode.com/posts/1";
+        $response = Http::get($api_url);
+        // $response = Http::get(env('API_URL'));
         $response_json = $response->object();
         return view('task3', compact('response_json'));
     }
