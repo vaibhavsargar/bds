@@ -38,7 +38,6 @@ class TaskController extends Controller
     {
         $response = Http::get(env('API_URL'));
         $response_json = $response->object();
-        // dd($response_json->id);
         return view('task3', compact('response_json'));
     }
 }

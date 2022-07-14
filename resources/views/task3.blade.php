@@ -18,10 +18,15 @@
                 <div class="card-header"><b>Response from API</b></div>
 
                 <div class="card-body">
-                    <p><b>userid:</b> {{$response_json->userId}}</p>
-                    <p><b>id:</b> {{$response_json->id}}</p>
-                    <p><b>title:</b> {{$response_json->title}}</p>
-                    <p><b>body:</b> {{$response_json->body}}</p>
+                    @if ($response_json)
+                        <p><b>userid:</b> {{$response_json->userId}}</p>
+                        <p><b>id:</b> {{$response_json->id}}</p>
+                        <p><b>title:</b> {{$response_json->title}}</p>
+                        <p><b>body:</b> {{$response_json->body}}</p>
+                    @else
+                    <p>No API response found</p>
+                    @endif
+                    
                 </div>
             </div>
         </div>
