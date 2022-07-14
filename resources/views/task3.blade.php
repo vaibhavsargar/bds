@@ -8,7 +8,7 @@
                 <div class="card-header"><b>Task Details</b></div>
 
                 <div class="card-body">
-                    <p><b>Task 2:</b> Seperate out given array into even and odd array</p>
+                    <p><b>Task 3:</b> Hit the API URL and get the response</p>
                     <p><b>API URL:</b> https://jsonplaceholder.typicode.com/posts/1</p>
                 </div>
             </div>
