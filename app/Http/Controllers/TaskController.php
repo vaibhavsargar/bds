@@ -17,7 +17,6 @@ class TaskController extends Controller
     {
         $allusers = User::all();
         $date = Carbon::now();
-        $todayDate = $date->format('m');
         $user = User::whereMonth('dob', $date->format('m'))->whereDay('dob',$date->format('d'))->get();
         return view('task1', compact('allusers','user','date'));
     }
@@ -42,4 +41,22 @@ class TaskController extends Controller
         $response_json = $response->object();
         return view('task3', compact('response_json'));
     }
+    
+    public function task4()
+    {
+        $api_url = "http://boru.in/public/api/fetch";
+        $response1 = Http::withHeaders([
+            'Token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYXBpdXNlciIsIm5hbWUiOiJsZWFkZm9ybSIsIkFQSV9USU1FIjoxNjQ0MzkzMjQ5fQ.RmJ5ZwcwYn04xdOR0K5LRpY9DqaY4P5d1sU4L2SvfXA',
+        ])->get($api_url);
+        $response_json1 = $response1->object();
+
+        $response2 = Http::post('http://boru.in/public/api/post_method', [
+            'name' => 'Vaibhav',
+            'email' => 'sargarvaibhav3@gmail.com',
+        ]);
+        $response_json2 = $response2->object();
+        return view('task4', compact('response_json1','response_json2'));
+    }
+
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/task1', [App\Http\Controllers\TaskController::class, 'task1'])->name('task1');
 Route::get('/task2', [App\Http\Controllers\TaskController::class, 'task2'])->name('task2');
 Route::get('/task3', [App\Http\Controllers\TaskController::class, 'task3'])->name('task3');
+Route::get('/task4', [App\Http\Controllers\TaskController::class, 'task4'])->name('task3');
