@@ -55,7 +55,10 @@ class TaskController extends Controller
             'email' => 'sargarvaibhav3@gmail.com',
         ]);
         $response_json2 = $response2->object();
-        return view('task4', compact('response_json1','response_json2'));
+
+        $response3 = Http::get('http://boru.in/public/api/get_method');
+        $response_json3 = $response3->object();
+        return view('task4', compact('response_json1','response_json2','response_json3'));
     }
 
 
