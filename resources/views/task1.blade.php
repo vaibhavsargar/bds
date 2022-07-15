@@ -26,7 +26,7 @@
                 <div class="card-header"><b>Birthday Today</b></div>
 
                 <div class="card-body">
-                    @if (!$user=='[]')
+                    @if (!$user==[])
                         Following users have birthday today <br>
                         @foreach ($user as $key => $item)
                             {{$key+1}}. {{ $item->name }} with birthdate {{ $item->dob }}
