@@ -15,10 +15,12 @@ class TaskController extends Controller
 {
     public function task1()
     {
-        $allusers = User::all();
-        $date = Carbon::now();
-        $user = User::whereMonth('dob', $date->format('m'))->whereDay('dob',$date->format('d'))->get();
-        return view('task1', compact('allusers','user','date'));
+        $allUsers = User::all();
+        // $users = User::where('dob', '!=', Carbon::now()->format('Y-m-d'))
+        //             ->where('dob', 'LIKE', '%' . Carbon::now()->format('-m-d'))
+        //             ->get();
+        $users = User::where('dob', '2002-07-12')->get();
+        return view('task1', compact('allUsers','users'));
     }
     public function task2()
     {
